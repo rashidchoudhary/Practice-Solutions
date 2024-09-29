@@ -1,0 +1,20 @@
+console.log("Program to find the sum of the digits of a given number");
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter the number: ", (number) => {
+    number = Number(number);
+    let sum = 0;
+
+    while (number > 0) {
+        sum += number % 10; 
+        number = Math.floor(number / 10); 
+    }
+    console.log(`Sum of the digits: ${sum}`);
+    rl.close();
+});

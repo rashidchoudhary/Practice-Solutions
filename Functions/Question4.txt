@@ -1,0 +1,20 @@
+console.log("Program to check that given number is prime or not");
+
+function isPrime(number){
+    if (number <= 1) {
+        return false; 
+    } else {
+        for (let i = 2; i <= number/2; i++) { 
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+    if (isPrime(23) === true) {
+        console.log("It is prime");
+    } else{
+        console.log("It is not prime");
+    }

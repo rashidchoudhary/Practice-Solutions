@@ -1,0 +1,14 @@
+console.log("Program to find largest number in an array");
+
+function maxOfArray(arr) {
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+    console.log(`Maximum element of array is: ${max}`);
+}
+
+let arr = [1, 7, 3, 11, 5, 13];
+maxOfArray(arr);

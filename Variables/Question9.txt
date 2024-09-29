@@ -1,0 +1,7 @@
+console.log("Program to claculate temperature in farenhiet and kelvin");
+
+let celcius = 10;
+let farenhiet = (celcius * 9/5) + 32;
+let kelvin = celcius + 273.15;
+console.log("Temperature in farehiet is:",farenhiet);
+console.log("Temperature in kelvin is:",kelvin);

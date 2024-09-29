@@ -1,0 +1,18 @@
+console.log("Program to find factorial of a given number");
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter the number: ", (number) => {
+    number = Number(number);
+    let factorial = 1; 
+    for(let i = 1; i <= number; i++){
+            factorial *= i;
+        }
+        console.log(factorial);
+    rl.close();
+});

@@ -1,0 +1,11 @@
+console.log("Program to find number of odd elements in an array");
+
+const arr = [4, 9, 11, 7, 3, 5];
+let count = 0;
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 !== 0){
+        count++;
+    }
+}
+
+console.log(`No. of odd elements are: ${count}`);

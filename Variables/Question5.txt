@@ -1,0 +1,7 @@
+console.log("Program to print average of three numbers");
+
+let num1 = 23;
+let num2 = 29;
+let num3 = 27;
+let average = (num1+num2+num3)/3;
+console.log("The average is:",average);

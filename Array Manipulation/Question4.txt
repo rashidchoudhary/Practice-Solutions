@@ -1,0 +1,185 @@
+const data = [
+    {
+      id: 1,
+      name: "John Doe",
+      age: 32,
+      address: {
+        street: "123 Main St",
+        city: "New York",
+        country: "USA",
+      },
+      hobbies: ["reading", "running", "painting"],
+      projects: [
+        {
+          id: 1,
+          name: "E-commerce Website",
+          tasks: [
+            { id: 1, description: "Design homepage", status: "completed" },
+            { id: 2, description: "Implement product listing", status: "in progress" },
+            { id: 3, description: "Setup payment gateway", status: "not started" },
+          ],
+        },
+        {
+          id: 2,
+          name: "Mobile App Development",
+          tasks: [
+            { id: 4, description: "Wireframe screens", status: "in progress" },
+            { id: 5, description: "Develop login functionality", status: "not started" },
+            { id: 6, description: "Test app on multiple devices", status: "not started" },
+          ],
+        },
+        {
+          id: 3,
+          name: "Data Analysis Project",
+          tasks: [
+            { id: 7, description: "Collect data from various sources", status: "completed" },
+            { id: 8, description: "Clean and preprocess data", status: "completed" },
+            { id: 9, description: "Perform statistical analysis", status: "completed" },
+            { id: 10, description: "Generate reports and visualizations", status: "completed" },
+          ],
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      age: 28,
+      address: {
+        street: "456 Park Ave",
+        city: "London",
+        country: "UK",
+      },
+      hobbies: ["cooking", "traveling", "playing guitar"],
+      projects: [
+        {
+          id: 4,
+          name: "Marketing Campaign",
+          tasks: [
+            { id: 11, description: "Define target audience", status: "completed" },
+            { id: 12, description: "Create advertising materials", status: "in progress" },
+            { id: 13, description: "Launch campaign", status: "not started" },
+          ],
+        },
+        {
+          id: 5,
+          name: "Event Planning",
+          tasks: [
+            { id: 14, description: "Research event venues", status: "in progress" },
+            { id: 15, description: "Coordinate with vendors", status: "not started" },
+            { id: 16, description: "Manage event logistics", status: "not started" },
+          ],
+        },
+        {
+          id: 6,
+          name: "Content Creation",
+          tasks: [
+            { id: 17, description: "Write blog articles", status: "completed" },
+            { id: 18, description: "Produce video content", status: "completed" },
+            { id: 19, description: "Optimize website SEO", status: "in progress" },
+          ],
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Mike Johnson",
+      age: 40,
+      address: {
+        street: "789 Oak St",
+        city: "Tokyo",
+        country: "Japan",
+      },
+      hobbies: ["photography", "gardening", "playing piano"],
+      projects: [
+        {
+          id: 7,
+          name: "Financial Planning",
+          tasks: [
+            { id: 20, description: "Assess financial goals", status: "completed" },
+            { id: 21, description: "Create budget plan", status: "completed" },
+            { id: 22, description: "Investment research", status: "in progress" },
+            { id: 23, description: "Monitor portfolio performance", status: "not started" },
+          ],
+        },
+        {
+          id: 8,
+          name: "Product Development",
+          tasks: [
+            { id: 24, description: "Conceptualize new product ideas", status: "completed" },
+            { id: 25, description: "Design product prototypes", status: "completed" },
+            { id: 26, description: "Test and iterate product features", status: "completed" },
+            { id: 27, description: "Prepare product for launch", status: "completed" },
+          ],
+        },
+        {
+          id: 9,
+          name: "Team Training",
+          tasks: [
+            { id: 28, description: "Identify training needs", status: "completed" },
+            { id: 29, description: "Develop training materials", status: "completed" },
+            { id: 30, description: "Conduct training sessions", status: "completed" },
+            { id: 31, description: "Evaluate training effectiveness", status: "completed" },
+          ],
+        },
+      ],
+    },
+  ];
+
+const numberOfIndividuals = data.length;
+console.log(`The number of individuals are: ${numberOfIndividuals}`);
+
+let ageOfJohnDoe;
+for (let i = 0; i < data.length; i++) {
+    if (data[i].name === "John Doe") {
+        ageOfJohnDoe = data[i].age;
+    }
+}
+console.log(`The age of John Doe is: ${ageOfJohnDoe}`);
+
+let countryOfJaneSmith;
+for (let i = 0; i < data.length; i++) {
+    if (data[i].name === "Jane Smith") {
+        countryOfJaneSmith = data[i].address.country;
+    }
+}
+console.log(`Coumtry of jane Smith is: ${countryOfJaneSmith}`);
+
+let hobbiesOfMikeJohnson;
+for (let i = 0; i < data.length; i++) {
+    if (data[i].name === "Mike Johnson") {
+        hobbiesOfMikeJohnson = data[i].hobbies.length;
+    }
+}
+console.log(`Hobbies of Mike Johnson are: ${hobbiesOfMikeJohnson}`);
+
+let tasksInEcommerceWebsite;
+for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data[i].projects.length; j++) {
+        if (data[i].projects[j].name === "E-commerce Website") {
+            tasksInEcommerceWebsite = data[i].projects[j].tasks.length;
+        }
+    }
+}
+console.log(`Number of tasks in Ecommerce website are: ${tasksInEcommerceWebsite}`);
+
+let statusOfTask13;
+for (let i = 0; i < data.length; i++) {
+    for (let j = 0; j < data[i].projects.length; j++) {
+        if (data[i].projects[j].name === "Marketing Campaign") {
+            for (let k = 0; k < data[i].projects[j].tasks.length; k++) {
+                if (data[i].projects[j].tasks[k].id === 13) {
+                    statusOfTask13 = data[i].projects[j].tasks[k].status;
+                }
+            }
+        }
+    }
+}
+console.log(`Status of task 13 is: ${statusOfTask13}`);
+
+let cityOfID3;
+for (let i = 0; i < data.length; i++) {
+    if (data[i].id === 3) {
+        cityOfID3 = data[i].address.city;
+    }
+}
+console.log(`City of ID 3 is: ${cityOfID3}`);

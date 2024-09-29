@@ -1,0 +1,16 @@
+console.log("Program to find second largest element in an array");
+
+const arr = [4, 9, 11, 7, 5];
+let largest = arr[0];
+let secondLargest = 0; 
+
+for(let i = 1; i < arr.length; i++){
+    if(arr[i] > largest){
+        secondLargest = largest;
+        largest = arr[i];
+    } else if(arr[i] > secondLargest && arr[i] !== largest){
+        secondLargest = arr[i];
+    }
+}
+
+console.log(`Second largest number is: ${secondLargest}`);

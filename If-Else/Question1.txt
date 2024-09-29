@@ -1,0 +1,19 @@
+console.log("Program to determine the sign onn an integer");
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+rl.question("Enter the integer: ", (integer) => {
+    integer = Number(integer);
+    if(integer > 0){
+        console.log("Positive");
+    } else if(integer < 0){
+        console.log("Negitive");
+    } else{
+        console.log("Zero");
+    }
+    rl.close();
+});
+

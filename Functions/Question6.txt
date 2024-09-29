@@ -1,0 +1,14 @@
+console.log("Program to calculate power of a number");
+
+function calculatePower(base, exponent) {
+    let result = 1;
+    if(base < 0 || exponent < 0){
+        console.log("Enter positive number.");
+    } else{
+        for(let i = 0; i < exponent; i++){
+            result *= base;
+        }
+        console.log(result);
+    }
+}
+calculatePower(2,3);

@@ -1,0 +1,112 @@
+import { streamModel } from "../models/index.js";
+import { seasonModel } from "../models/index.js";
+import { seriesModel } from "../models/index.js";
+import { genreModel } from "../models/index.js";
+import { genreSeriesModel } from "../models/index.js";
+import { episodeModel } from "../models/index.js";
+
+export const streamService = {
+  getEpisodeOfStreamByStreamId: async (id) => {
+    return streamModel.aggregate([
+      {
+        $match: {
+          _id: new mongoose.Types.ObjectId(id)
+        }
+      }
+      {
+        $lookup: {
+          from: "episodes",
+          localField: "episode_id",
+          foreignField: "_id",
+          as: "episode",
+        },
+      },
+      { $unwind: "$episode" },
+    ]);
+  },
+  getUserOfStreamByStreamId: async (id) => {
+    return streamModel.aggregate([
+      {
+        $match: {
+          _id: new mongoose.Types.ObjectId(id)
+        }
+      }
+      {
+        $lookup: {
+          from: "users",
+          localField: "user_id",
+          foreignField: "_id",
+          as: "user",
+        },
+      },
+      { $unwind: "$user" },
+    ]);
+  },
+  getSeasonOfEpisodeOfStreamByStreamId: async (id) => {
+    return streamModel.aggregate([
+      {
+        $match: {
+          _id: new mongoose.Types.ObjectId(id)
+        }
+      }
+      {
+        $lookup: {
+          from: "episodes",
+          localField: "episode_id",
+          foreignField: "_id",
+          pipeline: [
+            {
+              $lookup: {
+                from: "seasons",
+                localField: "season_id",
+                foreignField: "_id",
+                as: "season",
+              },
+            },
+          ],
+          as: "episode",
+        },
+      },
+      { $unwind: "$episode" },
+    ]);
+
+  },
+  getSeriesOfSeasonOfEpisodeofStreamByStreamId: async (id) => {
+    return streamModel.aggregate([
+      {
+        $match: {
+          _id: new mongoose.Types.ObjectId(id)
+        }
+      }
+      {
+        $lookup: {
+          from: "episodes",
+          localField: "episode_id",
+          foreignField: "_id",
+          pipeline: [
+            {
+              $lookup: {
+                from: "seasons",
+                localField: "season_id",
+                foreignField: "_id",
+                pipeline: [
+                  {
+                    $lookup: {
+                      from: "series",
+                      localField: "series_id",
+                      foreignField: "_id",
+                      as: "series",
+                    },
+                  },
+                ],
+                as: "season",
+              },
+            },
+          ],
+          as: "episode",
+        },
+      },
+      { $unwind: "$episode" },
+    ]);
+  },
+};

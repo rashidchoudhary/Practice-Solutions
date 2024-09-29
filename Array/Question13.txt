@@ -1,0 +1,11 @@
+console.log("Program to find largest element in an array");
+
+const arr = [4, 9, 11, 7, 5];
+let max = arr[0];
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] > max){
+        max = arr[i];
+    }
+}
+
+console.log(`Largest number is: ${max}`);

@@ -1,0 +1,20 @@
+console.log("Program to find the reverse of a given number");
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter the number: ", (number) => {
+    number = Number(number);
+    let reverse = 0;
+    while (number > 0) {
+        const lastDigit = number % 10;
+        reverse = (reverse * 10) + lastDigit; 
+        number = Math.floor(number / 10); 
+    }
+    console.log(`Reverse of number is: ${reverse}`);
+    rl.close();
+});

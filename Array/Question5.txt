@@ -1,0 +1,9 @@
+console.log("Program to find average of all elements in an array");
+
+const arr = [4, 9, 11, 6, 5];
+let sum = 0
+for(let i = 0; i < arr.length; i++){
+    sum += arr[i];
+}
+let average = sum/arr.length;
+console.log(`The average of all elements is: ${average}`);

@@ -1,0 +1,18 @@
+console.log("Program to print all even number between 1 and given number");
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter the number: ", (number) => {
+    number = Number(number);
+    for(let i = 0; i < number; i++){
+        if(i % 2 === 0){
+            console.log(i);
+        }
+    }
+    rl.close();
+});

@@ -1,0 +1,8 @@
+console.log("Program to print the quotient and remainder of two numbers");
+
+let num1 = 45;
+let num2 = 7;
+let quotient = num1/num2;
+let remainder = num1 % num2;
+console.log("The quotient is:",quotient);
+console.log("The remainder is:",remainder);

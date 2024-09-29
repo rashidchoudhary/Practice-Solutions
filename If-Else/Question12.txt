@@ -1,0 +1,29 @@
+console.log("Program to find if a number is palindrome or not");
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question("Enter a 5-digit number: ", (number) => {
+    number = Number(number);
+    if (number < 10000 || number > 99999) {
+        console.log("Please enter a valid 5-digit number.");
+    } else {
+        const digit1 = Math.floor(number / 10000);        
+        const digit2 = Math.floor((number % 10000) / 1000); 
+        const digit3 = Math.floor((number % 1000) / 100);   
+        const digit4 = Math.floor((number % 100) / 10);     
+        const digit5 = number % 10;                       
+
+        if (digit1 === digit5 && digit2 === digit4) {
+            console.log("Palindrome");
+        } else {
+            console.log("Not Palindrome");
+        }
+    }
+
+    rl.close();
+});

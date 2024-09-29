@@ -1,0 +1,16 @@
+console.log("Program to check array palindrome")
+
+let array = [1, 2, 3, 2, 1];
+let isPalindrome = true;
+
+for (let i = 0; i < array.length / 2; i++) {
+    if (array[i] !== array[array.length - 1 - i]) {
+        isPalindrome = false;
+        break;
+    }
+}
+if (isPalindrome) {
+    console.log("The array is a palindrome.");
+} else {
+    console.log("The array is not a palindrome.");
+}

@@ -1,0 +1,4 @@
+console.log("Program to print result of arithematic expression");
+
+let result = ((5 + 3) * 4)/2;
+console.log("The result is:",result);

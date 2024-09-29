@@ -1,0 +1,3 @@
+console.log("Program to print a message");
+let message = "Welcome to the world of programming!!";
+console.log(message);

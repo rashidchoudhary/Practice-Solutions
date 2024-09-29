@@ -1,0 +1,81 @@
+const arrOfFruits = [
+    { name: "apple", color: "red", weight: 100 },
+    { name: "banana", color: "yellow", weight: 150 },
+    { name: "pineapple", color: "yellow", weight: 200 },
+    { name: "orange", color: "orange", weight: 120 },
+    { name: "lemon", color: "yellow", weight: 130 },
+    { name: "mango", color: "yellow", weight: 180 },
+];
+
+let fruits = 0;
+for(let i = 0; i < arrOfFruits.length; i++){
+    fruits++;
+}
+console.log(`Number of fruits are: ${fruits}`);
+
+let uniqueColors = [];
+for (let i = 0; i < arrOfFruits.length; i++) {
+    if (!uniqueColors.includes(arrOfFruits[i].color)) {
+        uniqueColors.push(arrOfFruits[i].color);
+    }
+}
+console.log(`Number of unique colors are: ${uniqueColors.length}`);
+
+let weightSum = 0;
+for(let i = 0; i < arrOfFruits.length; i++){
+    weightSum += arrOfFruits[i].weight;
+}
+let averageWeight = weightSum/arrOfFruits.length;
+console.log(`Average weight of fruits is: ${averageWeight}`);
+
+let lightest = arrOfFruits[0];
+for(let i = 0; i < arrOfFruits.length; i++){
+    if(arrOfFruits[i].weight < lightest.weight){
+        lightest = arrOfFruits[i];
+    }
+}
+console.log(lightest);
+
+let highestWeight = arrOfFruits[0];
+for(let i = 0; i < arrOfFruits.length; i++){
+    if(arrOfFruits[i].weight > highestWeight.weight){
+        highestWeight = arrOfFruits[i];
+    }
+}
+console.log(highestWeight.name,highestWeight.color);
+
+let weightMoreEqual150 = 0;
+for(let i = 0; i < arrOfFruits.length; i++){
+    if(arrOfFruits[i].weight >= 150){
+        weightMoreEqual150++;
+    }
+}
+console.log(`Number of fruits greater or equal to 150: ${weightMoreEqual150}`);
+
+let weightYellowSum = 0;
+let yellow = 0;
+for(let i = 0; i < arrOfFruits.length; i++){
+    if(arrOfFruits[i].color === "yellow"){
+        weightYellowSum += arrOfFruits[i].weight;
+        yellow++;
+    }
+}
+let averageYellowWeight = weightYellowSum/yellow;
+console.log(`Average weights of fruits with color yellow: ${averageYellowWeight}`);
+console.log(`Number of fruits with color yellow: ${yellow}`);
+
+let fruitsWithColorYellow = [];
+for (let i = 0; i < arrOfFruits.length; i++) {
+    if (arrOfFruits[i].color === "yellow") {
+        fruitsWithColorYellow.push(arrOfFruits[i].name);
+    }
+}
+console.log(fruitsWithColorYellow);
+
+let moreThan5Char = 0;
+for (let i = 0; i < arrOfFruits.length; i++) {
+    if (arrOfFruits[i].name.length > 5) {
+        moreThan5Char++;
+    }
+}
+console.log(`Number of fruits having name with more than 5 characters: ${moreThan5Char}`);

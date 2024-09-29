@@ -1,0 +1,91 @@
+const arrOfLanguages = [
+    { name: "JavaScript", type: "dynamic", founder: "Brendan Eich", year: 1995 },
+    { name: "Java", type: "static", founder: "James Gosling", year: 1995 },
+    { name: "Python", type: "dynamic", founder: "Guido van Rossum", year: 1991 },
+    { name: "C++", type: "static", founder: "Bjarne Stroustrup", year: 1985 },
+    { name: "C#", type: "static", founder: "Microsoft", year: 2000 },
+    { name: "PHP", type: "dynamic", founder: "Rasmus Lerdorf", year: 1995 },
+    { name: "Swift", type: "static", founder: "Apple", year: 2014 },
+    { name: "Ruby", type: "dynamic", founder: "Yukihiro Matsumoto", year: 1995 },
+    { name: "Go", type: "static", founder: "Google", year: 2009 },
+];
+
+let languages = 0;
+for(let i = 0; i < arrOfLanguages.length; i++){
+    languages++;
+}
+console.log(`Number of languages are: ${languages}`);
+
+let dynamic = 0;
+for(let i = 0; i < arrOfLanguages.length; i++){
+    if(arrOfLanguages[i].type === "dynamic"){
+        dynamic++;
+    }
+}
+console.log(`Number of languages with dynamic typing are: ${dynamic}`);
+
+let yearSum = 0;
+for(let i = 0; i < arrOfLanguages.length; i++){
+    yearSum += arrOfLanguages[i].year;
+}
+let averageYear = yearSum/arrOfLanguages.length;
+console.log(`Average of years of language is: ${averageYear}`);
+
+let foundedFirst = arrOfLanguages[0];
+for(let i = 0; i < arrOfLanguages.length; i++){
+    if(arrOfLanguages[i].year < foundedFirst.year){
+        foundedFirst = arrOfLanguages[i];
+    }
+}
+console.log("Founded first:");
+console.log(foundedFirst.name,foundedFirst.founder);
+
+let foundedlatest = arrOfLanguages[0];
+for(let i = 0; i < arrOfLanguages.length; i++){
+    if(arrOfLanguages[i].year > foundedlatest.year){
+        foundedlatest = arrOfLanguages[i];
+    }
+}
+console.log("Latest founded:");
+console.log(foundedlatest.name,foundedlatest.founder);
+
+let static = 0;
+for(let i = 0; i < arrOfLanguages.length; i++){
+    if(arrOfLanguages[i].type === "static"){
+        static++;
+    }
+}
+console.log(`Number of languages with static typing are: ${static}`);
+
+let foundedBefore95 = 0;
+for(let i = 0; i < arrOfLanguages.length; i++){
+    if(arrOfLanguages[i].year < 1995){
+        foundedBefore95++;
+    }
+}
+console.log(`Number of languages founded before 1995 are: ${foundedBefore95}`);
+
+let dynamicLanguages = [];
+for (let i = 0; i < arrOfLanguages.length; i++) {
+    if (arrOfLanguages[i].type === "dynamic") {
+        dynamicLanguages.push(arrOfLanguages[i].name);
+    }
+}
+console.log(dynamicLanguages);
+
+let foundedByIndividual = [];
+for (let i = 0; i < arrOfLanguages.length; i++) {
+    if (arrOfLanguages[i].founder !== "Microsoft" && arrOfLanguages[i].founder !== "Google" && arrOfLanguages[i].founder !== "Apple") {
+        foundedByIndividual.push(arrOfLanguages[i].name);
+    }
+}
+console.log(foundedByIndividual);
+
+let moreThanOneWord = 0;
+for (let i = 0; i < arrOfLanguages.length; i++) {
+    if (arrOfLanguages[i].founder.split(" ").length > 1) {
+        moreThanOneWord++;
+    }
+}
+
+console.log(`Number of languages with founder having more than one word in name: ${moreThanOneWord}`);

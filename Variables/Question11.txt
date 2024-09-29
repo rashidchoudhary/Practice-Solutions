@@ -1,0 +1,9 @@
+console.log("Program to swap two numbers");
+
+let num1 = 30;
+let num2 = 50;
+let temp = num1;
+num1 = num2;
+num2 = temp;
+console.log("Number 1 after swap:",num1);
+console.log("Number 2 after swap:",num2);
